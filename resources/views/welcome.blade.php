@@ -8,8 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <script src="{{ asset('js/app.js') }}"></script>
+        
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+       
         <!-- Styles -->
         <style>
             
@@ -65,6 +68,7 @@
             }
         </style>
     </head>
+   
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -87,7 +91,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
+             
+                    <button id ="ok">Try It</button>
+                    
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
@@ -98,5 +104,18 @@
                 </div>
             </div>
         </div>
-    </body>
+        <script>
+            $(document).ready(function(){
+                function showLocation(position){
+                    var x = position.coords.latitude;
+                    var y = position.coords.longitude;
+                    alert("latitude: " + x + " longitude :" + y);
+            }
+            $("#ok").click(function () {
+                navigator.geolocation.getCurrentPosition(showLocation);  
+        });
+    });
+         </script>
+    </body>  
 </html>
+
