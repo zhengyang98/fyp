@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('crops/monitor', 'CropsMonitoringController@showMonitor')->name('crops.monitor');
+Route::get('crops/monitor', 'CropsMonitoringController@showCrops')->name('crops.monitor');
+Route::post('crops/monitor', 'CropsMonitoringController@storeMonitor')->name('store.monitor');
+Route::resource('crops', 'CropsController');
 
 
 

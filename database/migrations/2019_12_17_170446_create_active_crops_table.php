@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCropsTable extends Migration
+class CreateActiveCropsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCropsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crops', function (Blueprint $table) {
+        Schema::create('active_crops', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('crop_name');
-            $table->bigInteger('duration');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ class CreateCropsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crops');
+        Schema::dropIfExists('active_crops');
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Crops extends Model
+class Active_crops extends Model
 {
-    protected $table = 'crops';
+    //
 }

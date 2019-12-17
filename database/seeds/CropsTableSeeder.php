@@ -11,6 +11,9 @@ class CropsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('crops')->insert([
+            'crop_name'=>'Maize',
+            'duration'=> 2592000,
+        ]);
     }
 }
