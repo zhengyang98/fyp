@@ -15,6 +15,10 @@ class CreateActiveCropsTable extends Migration
     {
         Schema::create('active_crops', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('crop_name');
+            $table->bigInteger('duration');
+            $table->dateTime('end_time');
+            //$table->user_id;
             $table->timestamps();
         });
     }
