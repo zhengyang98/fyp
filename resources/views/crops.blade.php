@@ -37,11 +37,13 @@
             @endforeach
             </tbody>
         </table>
+        {{$active_crops->links()}}
     </div>
+
 @endif
 <script type="application/javascript">
 $("document").ready(function() {
-//     var i = setInterval(function () {
+//     let i = setInterval(function () {
 //
 //     }
 //     },1000)
@@ -50,30 +52,30 @@ $("document").ready(function() {
     function getCol(id, col) {
         let t = document.getElementById(id);
 
-        var n = t.rows.length;
-        var i, s = null, tr, td;
+        let n = t.rows.length;
+        let i, s = null, tr, td;
 
         for (i = 1; i < n; i++) {
             tr = t.rows[i];
             td = tr.cells[col];
-            var row = document.getElementById('crop');
-            var cell = row.getElementsByTagName("td");
+            let row = document.getElementById('crop');
+            let cell = row.getElementsByTagName("td");
             tdd = tr.cells[3];
             let end = tdd.innerText;
-            var end_date = new Date(end).getTime();
-            var now = new Date().getTime();
-            var distance = end_date - now;
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            let end_date = new Date(end).getTime();
+            let now = new Date().getTime();
+            let distance = end_date - now;
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             td.innerHTML = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
         }
     }
 
-    var x = setInterval(function(){
+    let x = setInterval(function(){
         getCol("crops-table",2);
     },1000);
 });

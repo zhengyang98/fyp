@@ -11,7 +11,7 @@ class CropsMonitoringController extends Controller
 {
     public function showCrops(){
         $crops = Crops::all();
-        $active_crops = Active_crops::all();
+        $active_crops = Active_crops::paginate(10);
        // $day = Crops::
         //$day = DB::table('crops')->pluck('duration(s)')->firstWhere('crops_name', ) ;
        // $day = $day/86400;
@@ -21,7 +21,7 @@ class CropsMonitoringController extends Controller
     public function storeMonitor(Request $request){
         //dd($request->all());
         $crops = Crops::all();
-        $active_crops = Active_crops::all();
+        $active_crops = Active_crops::paginate(10);
         $active_crop = new Active_crops;
         $active_crop->crop_name = DB::table('crops')->select('crop_name')->where('id', $request->crops_id)->value('crop_name');
         $active_crop->duration = DB::table('crops')->select('duration')->where('id', $request->crops_id)->pluck('duration')->first();
