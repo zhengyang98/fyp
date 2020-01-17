@@ -16,6 +16,13 @@ class UsersTableSeeder extends Seeder
             'name'=>'yang',
             'email'=>'yang@mail.com',
             'password'=>bcrypt('yangyang'),
-        ]);
+        ],
+        [
+            'name'=>'Merchant A',
+            'email'=>'merchant@mail.com',
+            'password'=>bcrypt('yangyang'),
+            'is_merchant' => '1',
+
+    ]);
     }
 }

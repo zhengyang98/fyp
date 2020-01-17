@@ -74,6 +74,8 @@ $("document").ready(function() {
                 + minutes + "m " + seconds + "s ";
             if (distance < 0){
                 clearInterval(x);
+                td.style.fontWeight = 'bold'
+                td.style.color = 'green'
                 td.innerHTML = "Completed"
             }
         }

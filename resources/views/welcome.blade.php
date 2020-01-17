@@ -8,14 +8,14 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
-       
+
         <!-- Styles -->
         <style>
-            
+
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -68,7 +68,7 @@
             }
         </style>
     </head>
-   
+
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -84,16 +84,15 @@
                     @endauth
                 </div>
             @endif
-            
+
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
                 </div>
 
                 <div class="links">
-             
+
                     <button id ="ok">Try It</button>
-                    
                     <a href="{{ route('crops.monitor') }}" >Crops test</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
@@ -112,10 +111,10 @@
                     alert("latitude: " + x + " longitude :" + y);
             }
             $("#ok").click(function () {
-                navigator.geolocation.getCurrentPosition(showLocation);  
+                navigator.geolocation.getCurrentPosition(showLocation);
         });
     });
          </script>
-    </body>  
+    </body>
 </html>
 
