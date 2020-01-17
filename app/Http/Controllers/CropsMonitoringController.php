@@ -12,10 +12,6 @@ class CropsMonitoringController extends Controller
     public function showCrops(){
         $crops = Crops::all();
         $active_crops = Active_crops::paginate(10);
-       // $day = Crops::
-        //$day = DB::table('crops')->pluck('duration(s)')->firstWhere('crops_name', ) ;
-       // $day = $day/86400;
-       // dd($day);
         return view ('crops', compact('crops','active_crops'));
     }
     public function storeMonitor(Request $request){
@@ -36,5 +32,8 @@ class CropsMonitoringController extends Controller
         $now =  Date("l jS \of F Y h:i:s").time();
         // $distance = $countDownDate - $now;
         echo "hi";
+    }
+    public function deleteCrop(Crops $crops){
+
     }
 }

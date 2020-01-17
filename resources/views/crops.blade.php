@@ -31,7 +31,7 @@
                 <tr id="crop" class="crop-row">
                     <td scope="row">{{$active_crop->id}}</td>
                     <td scope="row">{{$active_crop->crop_name}}</td>
-                    <td id="time" scope="row">loading...</td>
+                    <td id="time" scope="row">Loading...</td>
                     <td scope="row">{{$active_crop->end_time}}</td>
                 </tr>
             @endforeach
@@ -72,6 +72,10 @@ $("document").ready(function() {
 
             td.innerHTML = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
+            if (distance < 0){
+                clearInterval(x);
+                td.innerHTML = "Completed"
+            }
         }
     }
 
