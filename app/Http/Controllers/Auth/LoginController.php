@@ -54,7 +54,7 @@ class LoginController extends Controller
             if (auth()->user()->is_merchant == 1) {
                 return redirect()->route('merchant.home');
             }else{
-                return redirect()->route('home');
+                return view('welcome');
             }
         }else{
             return Redirect::back()->withInput()

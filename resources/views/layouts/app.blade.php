@@ -17,9 +17,10 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css?v=11') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -37,7 +38,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        @auth
+                            <li>
+                                <a class="nav-link" href="{{ route('crops.monitor') }}" >Monitor Crop</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{route('review.request')}}">View Crop Request</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{route('crops.record')}}">View Monitoring Record</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{route('accepted.request')}}">View Accepted Request</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

@@ -17,6 +17,7 @@ class CreateActiveCropsTable extends Migration
             $table->bigIncrements('id');
             $table->string('crop_name');
             $table->bigInteger('duration');
+            $table->float('quantity');
             $table->dateTime('end_time');
             $table->timestamps();
             $table->boolean('status');

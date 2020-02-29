@@ -31,6 +31,7 @@ class CropsMonitoringController extends Controller
         $active_crop = new Active_crops;
         $active_crop->crop_name = DB::table('crops')->select('crop_name')->where('id', $request->crops_id)->value('crop_name');
         $active_crop->duration = DB::table('crops')->select('duration')->where('id', $request->crops_id)->pluck('duration')->first();
+        $active_crop->quantity = $request->crop_quantity;
         $active_crop->end_time = date("Y-m-d H:i:s", time()+$active_crop->duration);
         $active_crop->status = '0';
         $active_crop->farmer_id = Auth::id();
@@ -53,6 +54,16 @@ class CropsMonitoringController extends Controller
         Active_crops::where('id', $id)
             ->update(['status'=>'1']);
         return Redirect::back();
+    }
+
+    public function showRecord(){
+        $crops = Crops::all();
+        $active_crops = Active_crops::where('farmer_id', '=', Auth::id())
+            ->where('status', '=', '1')->paginate(10);
+        foreach ($active_crops as $active_crop){
+            $crop_img = DB::table('crops')->select('img-url')->where('crop_name', $active_crop->crop_name)->value('img-url');
+        }
+        return view ('crop_record', compact('crops','active_crops','crop_img'));
     }
 
 //    public function sendReminder(){

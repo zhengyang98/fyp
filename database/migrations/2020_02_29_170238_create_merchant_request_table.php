@@ -15,7 +15,14 @@ class CreateMerchantRequestTable extends Migration
     {
         Schema::create('merchant_request', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('crop_name');
+            $table->float('price');
+            $table->float('amount');
+            $table->string('location');
+            $table->boolean('status'); //0 for pending, 1 for accepted
+            $table->timestamps(); //timestamp include created_at
+            $table->integer('merchant_id'); //same as user ID, only different role
+            $table->integer('farmer_id')->nullable();
         });
     }
 

@@ -6,7 +6,19 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*custom CSS */
+a.nav-link{
+    font-size: 19px;
+    margin-right: 20px;
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 65% !important;
+    }
+}
 
+
+/*end custom*/
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
