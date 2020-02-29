@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Active_crops;
+use App\Jobs\SendReminderJob;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -26,6 +28,11 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        $schedule->job(new SendReminderJob())->everyMinute()->when(function(){
+            return true;
+        });
+
     }
 
     /**

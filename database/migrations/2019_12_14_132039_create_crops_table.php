@@ -17,6 +17,7 @@ class CreateCropsTable extends Migration
             $table->bigIncrements('id');
             $table->string('crop_name');
             $table->bigInteger('duration');
+            $table->string('img-url')->nullable();
         });
     }
 

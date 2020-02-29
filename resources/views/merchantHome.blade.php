@@ -13,7 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        You are logged in as {{\Illuminate\Support\Facades\Auth::user()->name}}!
+                        You are logged in as {{\Illuminate\Support\Facades\Auth::user()->name}}! User type: Merchant
                     </div>
                 </div>
             </div>

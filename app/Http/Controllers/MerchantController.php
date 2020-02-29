@@ -20,4 +20,8 @@ class MerchantController extends Controller
         return view('merchantHome');
     }
 
+    public function requestItem(Request $request){
+
+    }
+
 }

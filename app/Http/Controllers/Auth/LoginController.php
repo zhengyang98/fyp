@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -37,25 +40,25 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-//    public function login(Request $request)
-//    {
-//        $input = $request->all();
-//
-//        $this->validate($request, [
-//            'email' => 'required|email',
-//            'password' => 'required',
-//        ]);
-//
-//        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
-//        {
-//            if (auth()->user()->is_merchant == 1) {
-//                return redirect()->route('merchant.home');
-//            }else{
-//                return redirect()->route('home');
-//            }
-//        }else{
-//            return redirect()->route('login')
-//                ->with('error','Email-Address And Password Are Wrong.');
-//        }
-//    }
+    public function login(Request $request)
+    {
+        $input = $request->all();
+
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->is_merchant == 1) {
+                return redirect()->route('merchant.home');
+            }else{
+                return redirect()->route('home');
+            }
+        }else{
+            return Redirect::back()->withInput()
+            ->withErrors(['email' => 'Invalid Email Entered, please register or try again', 'password'=>'Invalid Password']);
+        }
+    }
 }

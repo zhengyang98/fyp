@@ -20,9 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('crops/monitor', 'CropsMonitoringController@showCrops')->name('crops.monitor')->middleware('auth');
 Route::post('crops/monitor', 'CropsMonitoringController@storeMonitor')->name('store.monitor');
+Route::get('crops/delete/{id}', 'CropsMonitoringController@deleteMonitor');
+Route::get('crops/update/{id}', 'CropsMonitoringController@completeMonitor');
 Route::resource('crops', 'CropsController');
-
+Route::get('/send', 'CropsMonitoringController@sendReminder');
 //middleware
-Route::get('merchant/home', 'MerchantController@merchantHome')->name('merchant.home')->middleware('is_merchant');
+Route::get('merchant/home', 'MerchantController@merchantHome')->name('merchant.home')->middleware('auth')->middleware('is_merchant');
 
 
