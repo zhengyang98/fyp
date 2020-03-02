@@ -15,8 +15,8 @@
             @endforeach
         </select>
         <br/>
-        <label style="font-size: 18px; margin-top: 20px" for="quantity">Seed Quantity (Gram): </label>
-        <input style="margin-bottom: 20px; width: 200px;" type="number" name="crop_quantity" value="Quantity (Gram)" placeholder="Seed Quantity (Gram)" min="1" step="0.00" required>
+        <label style="font-size: 18px; margin-top: 20px" for="quantity">Crop Quantity: </label>
+        <input style="margin-bottom: 20px; width: 200px;" type="number" name="crop_quantity" value="Quantity" placeholder="Quantity" min="1" step="0.00" required>
         <br/><br/>
         <input class="btn btn-success" style="font-size: 18px" type="submit" value="Submit">
     </form>
@@ -30,8 +30,8 @@
                     <thead align="center">
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Crops.</th>
-                        <th scope="col">Seed Quantity</th>
+                        <th scope="col">Crop</th>
+                        <th scope="col">Crops Planted</th>
                         <th scope="col">Est. Time Remaining</th>
                         <th scope="col">End Time</th>
                         <th scope="col">Action</th>
@@ -44,7 +44,7 @@
                             <td scope="row"><img style="width: 40px; height: 40px"
                                 src = "{{$crop_img = DB::table('crops')->select('img-url')->where('crop_name', $active_crop->crop_name)->value('img-url')}}">
                                 {{$active_crop->crop_name}}</td>
-                            <td scope="row">{{$active_crop->quantity}} g</td>
+                            <td scope="row">{{$active_crop->quantity}}</td>
                             <td id="time" scope="row">Loading...</td>
                             <td scope="row">{{$active_crop->end_time}}</td>
                             <td scope ="row"><a style="display: inline; margin-right: 10px; color: red" href='delete/{{$active_crop->id}}' class="btn-block">Delete</a>

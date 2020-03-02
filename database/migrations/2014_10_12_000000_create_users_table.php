@@ -21,7 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_merchant')->nullable();
-           // $table->string('location');
+            $table->string('lat')->nullable();
+            $table->string('long')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

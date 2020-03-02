@@ -29,5 +29,8 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+        'here_app_id' => env('HERE_APP_ID', "none"),
+        'here_api_key' => env('HERE_API_KEY', "none"),
+        'lat' => env('LAT', 'null'),
+        'long' => env('LONG', null),
 ];

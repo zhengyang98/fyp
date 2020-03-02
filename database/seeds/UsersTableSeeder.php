@@ -14,16 +14,20 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
         [
-            'name'=>'yang',
-            'email'=>'yang@mail.com',
+            'name'=>'Yang',
+            'email'=>'yang123pro@hotmail.com',
             'password'=>bcrypt('yangyang'),
             'is_merchant' => '0',
+            'lat' => null,
+            'long' => null,
         ],
         [
             'name'=>'Merchant A',
             'email'=>'merchant@mail.com',
             'password'=>bcrypt('yangyang'),
             'is_merchant' => '1',
+            'lat' => null,
+            'long' => null,
         ]
 
     ]);

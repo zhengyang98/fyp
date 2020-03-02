@@ -8,7 +8,7 @@
             <tr>
                 <th scope="col">No.</th>
                 <th scope="col">Crop</th>
-                <th scope="col">Seed Quantity</th>
+                <th scope="col">Crops Planted</th>
                 <th scope="col">End Time</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
@@ -21,7 +21,7 @@
                     <td scope="row"><img style="width: 40px; height: 40px"
                                          src = "{{$crop_img = DB::table('crops')->select('img-url')->where('crop_name', $active_crop->crop_name)->value('img-url')}}">
                         {{$active_crop->crop_name}}</td>
-                    <td scope="row">{{$active_crop->quantity}} g</td>
+                    <td scope="row">{{$active_crop->quantity}}</td>
                     <td scope="row">{{$active_crop->end_time}}</td>
                     @if ($active_crop->status == "1")
                         <td id = "status" scope="row">Completed</td>
@@ -34,7 +34,7 @@
         {{$active_crops->links()}}
     </div>
 @else
-    <div class="container" style="font-size: 20px">No crop has been monitored yet, please create one to begin.</div>
+    <div class="container" style="font-size: 20px">No crop has been recorded as completed yet, please check your monitored crops <a href="{{route('crops.monitor')}}">here</a>.</div>
 @endif
 <script type="application/javascript">
     $("document").ready(function() {

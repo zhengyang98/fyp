@@ -27,13 +27,16 @@ Route::get('crops/monitor', 'CropsMonitoringController@showCrops')->name('crops.
 Route::post('crops/monitor', 'CropsMonitoringController@storeMonitor')->name('store.monitor');
 Route::get('crops/delete/{id}', 'CropsMonitoringController@deleteMonitor');
 Route::get('crops/update/{id}', 'CropsMonitoringController@completeMonitor');
-Route::resource('crops', 'CropsController');
 Route::get('/send', 'CropsMonitoringController@sendReminder');
 Route::get('/croprequests', 'MerchantController@reviewRequest')->name('review.request')->middleware('auth');
 Route::get('/accept/{id}/{user_id}', 'MerchantController@acceptRequest');
 Route::get('/crops-record', 'CropsMonitoringController@showRecord')->name('crops.record')->middleware('auth');
 Route::get('/delete/{id}', 'CropsMonitoringController@deleteMonitor');
 Route::get('/accepted/request', 'MerchantController@displayAcceptedRequest')->name('accepted.request')->middleware('auth');
+
+//weather(test)
+Route::post('/get-coordinate', 'CropsMonitoringController@getCoordinate')->name('get.coordinate');
+Route::get('/weather-info', "WeatherController@index")->middleware('auth');
 
 //middleware
 Route::get('merchant/home', 'MerchantController@merchantHome')->name('merchant.home')->middleware('auth')->middleware('is_merchant');

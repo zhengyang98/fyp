@@ -2,7 +2,7 @@
 @section('content')
     @if(count($active_requests)>0)
         <div class ="container">
-            <h1 style="margin-bottom: 20px">Requests Accepted:</h1>
+            <h1 style="margin-bottom: 20px; font-family:'Montserrat'; font-weight: 800">Requests Accepted:</h1>
             <table class="table" id="request-table">
                 <thead align="center">
                 <tr>
@@ -31,6 +31,8 @@
                 </tbody>
             </table>
             {{$active_requests->links()}}
+            <div style="width: 30%; border: 3px solid #D3D3D3"></div>
+                <h3 style="margin-top: 20px">Projected Income: <span style="font-weight: bold">RM {{DB::table('merchant_request')->where('farmer_id', \Illuminate\Support\Facades\Auth::id())->sum('price')}}</span></h3>
         </div>
 @else
     <div class="container" style="font-size: 24px">There is currently no request accepted, please <a href="{{route('review.request')}}">click here</a> to view requests posted.</div>

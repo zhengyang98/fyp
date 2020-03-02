@@ -42,7 +42,9 @@ class SendReminderJob implements ShouldQueue
             if($end-time()<=259200){//check if remaining duration is 3 days
                 $id = $active_crop->farmer_id;
                 $user_email = DB::table('users')->select('email')->where('id', $id)->value('email');
-                Mail::to($user_email)->send(new CropHarvest());
+                $user_name = DB::table('users')->select('name')->where('id', $id)->value('name');
+                $crop_name =$active_crop->crop_name;
+                Mail::to($user_email)->send(new CropHarvest($user_name, $crop_name));
             }
         }
 

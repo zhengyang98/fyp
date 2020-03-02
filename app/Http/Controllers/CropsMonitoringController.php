@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Active_crops;
 use App\Mail\CropHarvest;
+use App\User;
 use Illuminate\Http\Request;
 use App\Crops;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,16 @@ class CropsMonitoringController extends Controller
             $crop_img = DB::table('crops')->select('img-url')->where('crop_name', $active_crop->crop_name)->value('img-url');
         }
         return view ('crop_record', compact('crops','active_crops','crop_img'));
+    }
+
+    public function getCoordinate(Request $request){
+        $lat = strval($request->lat);
+        $long = strval($request->long);
+        //dd($long);
+        $users = new User;
+        User::where('id', Auth::id())
+            ->update(['lat'=>$lat,
+                'long'=>$long]);
     }
 
 //    public function sendReminder(){

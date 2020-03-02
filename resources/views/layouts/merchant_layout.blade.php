@@ -22,15 +22,37 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!--Template Style -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+
+    <link rel="stylesheet" href="{{asset('fonts/flaticon/font/flaticon.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/aos.css')}}">
+
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'FarmEasy') }}
-            </a>
+            <div style="display: flex; flex-wrap: wrap; flex-direction: row; margin-right: 10px">
+                <a href="{{url('/merchant/home')}}"><img style="margin-right: 10px" width="35px" height="35px" src="https://www.freeiconspng.com/uploads/green-leaf-icon-10.png">
+                </a>
+                <a class="navbar-brand" href="{{ url('/merchant/home') }}">
+                    {{ config('app.name', 'EasyFarm') }}
+                </a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,7 +60,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    @auth()
+                        <li>
+                            <div style="display: flex; flex-wrap: wrap; flex-direction: row">
+                                <img width="35px" height="35px" src="https://img.icons8.com/cotton/2x/checklist.png">
+                                <a class="nav-link" href="{{ route('display.request') }}" >Publish Crop Request</a>
+                            </div>
+                        </li>
+                    @endauth
                 </ul>
 
                 <!-- Right Side Of Navbar -->

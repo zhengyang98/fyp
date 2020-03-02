@@ -15,12 +15,12 @@ class CropsTableSeeder extends Seeder
             [
                 'crop_name'=>'Corn',
                 'duration'=> 2592000,
-                'img-url'=>'https://lh3.googleusercontent.com/proxy/An6ucSPfkShGkXgoUHaUZYqZOJ07_1KW82LdJLuYD66Ll2sE3sxMRMF0C7OBGvNSkUhJNWdmC-8p2MJQzFmcrXBTSiew1teiVn6wZJZd5NkPPJWmUZWxjcDWfNzprEqSBSIe'
+                'img-url'=>'https://pngimg.com/uploads/corn/corn_PNG5284.png'
             ],
             [
                 'crop_name'=>'Wheat',
                 'duration'=> 3888000,
-                'img-url'=>'https://lh3.googleusercontent.com/proxy/Vqg9yvX1hg2300P6LuxiXB-2lsGMlhyUo_Ak3lLbSZz7xkwDvJIDMuliUM-vr2Alcsifb0STAMlXBtM2XxC3JLs7w13DYvZwgiSFG5NVPv9bASCOnkY'
+                'img-url'=>'https://www.stickpng.com/assets/images/5c7172d1631702026cb2bcf5.png'
             ],
             [
                 'crop_name'=>'Cabbage',
@@ -28,9 +28,19 @@ class CropsTableSeeder extends Seeder
                 'img-url'=>'https://purepng.com/public/uploads/medium/purepng.com-cabbagecabbageplantvegetablesgreen-1701527241612ushwz.png'
             ],
             [
-                'crop_name'=>'Test Schedule',
+                'crop_name'=>'Potato',
+                'duration'=> 7776000,
+                'img-url'=>'https://pngimg.com/uploads/potato/potato_PNG7082.png'
+            ],
+            [
+                'crop_name'=>'Banana',
+                'duration'=> 3888000,
+                'img-url'=>'https://i.ya-webdesign.com/images/banana-tree-png.png'
+            ],
+            [
+                'crop_name'=>'Test Crop',
                 'duration'=> 254200,
-                'img-url'=>null
+                'img-url'=>'https://purepng.com/public/uploads/medium/purepng.com-cabbagecabbageplantvegetablesgreen-1701527241612ushwz.png'
             ]
         ]);
     }
