@@ -28,8 +28,15 @@ class UsersTableSeeder extends Seeder
             'is_merchant' => '1',
             'lat' => null,
             'long' => null,
+        ],
+        [
+            'name'=>'Merchant B',
+            'email'=>'czyang98@hotmail.com',
+            'password'=>bcrypt('yangyang'),
+            'is_merchant' => '1',
+            'lat' => null,
+            'long' => null,
         ]
-
     ]);
     }
 }

@@ -19,7 +19,6 @@ class WeatherController extends Controller
             $app_api = "e9NFIDxWiDMxC4pPOFXBIhW1cm7M05N2ZIGV2nSk1C4";
             $lat = Auth::user()->lat;
             $long = Auth::user()->long;
-
             $url = "https://weather.ls.hereapi.com/weather/1.0/report.json?apiKey={$app_api}&product=forecast_hourly&latitude={$lat}&longitude={$long}";
             Log::info($url);
             $client = new \GuzzleHttp\Client();

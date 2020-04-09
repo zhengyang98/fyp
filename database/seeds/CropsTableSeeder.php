@@ -20,7 +20,7 @@ class CropsTableSeeder extends Seeder
             [
                 'crop_name'=>'Wheat',
                 'duration'=> 3888000,
-                'img-url'=>'https://www.stickpng.com/assets/images/5c7172d1631702026cb2bcf5.png'
+                'img-url'=>'https://i.imgur.com/CIkOSs2.png'
             ],
             [
                 'crop_name'=>'Cabbage',
@@ -39,6 +39,11 @@ class CropsTableSeeder extends Seeder
             ],
             [
                 'crop_name'=>'Test Crop',
+                'duration'=> 254200,
+                'img-url'=>'https://purepng.com/public/uploads/medium/purepng.com-cabbagecabbageplantvegetablesgreen-1701527241612ushwz.png'
+            ],
+            [
+                'crop_name'=>'Test 2',
                 'duration'=> 254200,
                 'img-url'=>'https://purepng.com/public/uploads/medium/purepng.com-cabbagecabbageplantvegetablesgreen-1701527241612ushwz.png'
             ]

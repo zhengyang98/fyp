@@ -7,7 +7,8 @@
 
 @section('content')
 <div class="container" xmlns="http://www.w3.org/1999/html">
-<form method="POST" action="{{route('store.monitor')}}">
+    <h1 style="font-family : 'Montserrat'; font-weight: 800">Crop Monitoring</h1>
+<form method="POST" action="{{route('store.monitor')}}" style="margin-top: 40px">
     @csrf
         <span style="font-size: 18px">Crops to Monitor: </span><select class = "js-example-basic-single"  name="crops_id" required>
             @foreach ($crops as $crop)
@@ -16,7 +17,7 @@
         </select>
         <br/>
         <label style="font-size: 18px; margin-top: 20px" for="quantity">Crop Quantity: </label>
-        <input style="margin-bottom: 20px; width: 200px;" type="number" name="crop_quantity" value="Quantity" placeholder="Quantity" min="1" step="0.00" required>
+        <input style="margin-bottom: 20px; width: 200px;" type="number" name="crop_quantity" value="Quantity" placeholder="1" min="1" step="0.00" required>
         <br/><br/>
         <input class="btn btn-success" style="font-size: 18px" type="submit" value="Submit">
     </form>
@@ -86,7 +87,6 @@ $("document").ready(function() {
             td.innerHTML = days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
             if (distance < 0){
-                clearInterval(x);
                 td.style.fontWeight = 'bold'
                 td.style.color = 'green'
                 td.innerHTML = "Completed"

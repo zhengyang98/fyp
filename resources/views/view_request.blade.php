@@ -4,6 +4,10 @@
         font-size: 22px;
         width: 50%;
     }
+    .font-secondary, h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5{
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    }
 </style>
 
 @extends('layouts.app')

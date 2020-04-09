@@ -19,9 +19,9 @@ a {
   a:hover {
     text-decoration: none; }
 
-.font-secondary, h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 {
-  font-family: "Oswald", arial, sans-serif; }
+/*.font-secondary, h1, h2, h3, h4, h5,*/
+/*.h1, .h2, .h3, .h4, .h5 {*/
+/*  font-family: "Oswald", arial, sans-serif; }*/
 
 .text-black {
   color: #000 !important; }

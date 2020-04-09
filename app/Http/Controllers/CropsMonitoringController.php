@@ -24,7 +24,6 @@ class CropsMonitoringController extends Controller
         return view ('crops', compact('crops','active_crops','crop_img'));
     }
     public function storeMonitor(Request $request){
-        //dd($request->all());
         $crops = Crops::all();
 
         $active_crops = Active_crops::where('farmer_id', '=', Auth::id())
@@ -53,7 +52,8 @@ class CropsMonitoringController extends Controller
     }
     public function completeMonitor($id){
         Active_crops::where('id', $id)
-            ->update(['status'=>'1']);
+            ->update(['status'=>'1',
+                    'end_time' => date("Y-m-d H:i:s", time())]);
         return Redirect::back();
     }
 

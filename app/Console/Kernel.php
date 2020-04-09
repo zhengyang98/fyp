@@ -24,15 +24,13 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+    // $schedule->command('inspire')
+    //          ->hourly();
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
-
         $schedule->job(new SendReminderJob())->everyMinute()->when(function(){
             return true;
         });
-
     }
 
     /**

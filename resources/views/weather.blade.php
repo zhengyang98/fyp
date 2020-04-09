@@ -5,7 +5,7 @@
 </style>
 @extends('layouts.app')
 @section('content')
-@if (count($forecast->forecast)>0)
+@if (count(array($forecast))!=null)
 <div class="links container">
     <h1>Weather Forecasts:</h1>
     <span style="font-size: 18px">Current Location: {{ $forecast->city }} - {{ $forecast->state }} - {{ $forecast->country }}</span>
@@ -42,6 +42,6 @@
 
 </div>
     @else
-        <div style="font-size: 24px">Weather information is unavailable for now, please come back later.</div>
+        <div class="container" style="font-size: 24px">Weather information is unavailable for now, please come back later.</div>
     @endif
 @endsection

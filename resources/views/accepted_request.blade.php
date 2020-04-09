@@ -23,7 +23,7 @@
                         @if ($active_request->status == "0")
                             <td id = "status" scope="row">Pending...</td>
                         @elseif($active_request->status == "1")
-                            <td id = "status" scope="row">Request From by Merchant: <span style="font-weight: bold; margin-right: 10px">{{DB::table('users')->select('name')->where('id', $active_request->merchant_id)->value('name')}}</span>
+                            <td id = "status" scope="row">Requested by Merchant: <span style="font-weight: bold; margin-right: 10px">{{DB::table('users')->select('name')->where('id', $active_request->merchant_id)->value('name')}}</span>
                                 Email: <a href="mailto: {{DB::table('users')->select('email')->where('id', $active_request->merchant_id)->value('email')}}" >{{DB::table('users')->select('email')->where('id', $active_request->merchant_id)->value('email')}}</a></td>
                         @endif
                     </tr>
